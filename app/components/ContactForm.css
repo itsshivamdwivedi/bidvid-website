@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+h1 {
+    font-size: 40px;
+    
+}
+
+.inputgroup {
+    position: relative;
+    margin: 20px 0;
+}
+
+.inputgroup label {
+    position: absolute;
+    top: 50%;
+    left: 16px; /* Adjusted for better alignment */
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: rgb(10, 10, 46);
+    padding: 0 5px;
+    pointer-events: none;
+    transition: 0.5s ease;
+    background: white; 
+    z-index: 1; /* Makes sure the label is above the border */
+}
+
+.inputgroup input,
+.inputgroup textarea {
+    width: 350px; /* Ensures the width is the same for both */
+    font-size: 16px;
+    color: rgb(10, 10, 45);
+    padding: 16px;
+    /* background: transparent; */
+    border: 1px solid rgb(10, 10, 45);
+    border-radius: 10px;
+    box-sizing: border-box;
+    position: relative;
+    z-index: 0; /* Ensures the input is below the label */
+}
+
+.inputgroup input {
+    height: 40px; /* Height for input fields */
+}
+
+.inputgroup textarea {
+    height: 150px; /* Increased height for the message field */
+    padding-top: 16px; /* Add some padding at the top */
+}
+
+.inputgroup input:focus ~ label,
+.inputgroup input:valid ~ label,
+.inputgroup textarea:focus ~ label,
+.inputgroup textarea:valid ~ label {
+    top: -3px; /* Moves the label above the input */
+    font-size: 12px;
+    color: black;
+    /* background-color: white; Ensures label background is visible when floating */
+    padding: 0 5px; /* Adjust padding to cover the border */
+}
+
+.button {
+    height: 50px;
+    width: 350px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgb(10, 10, 45);
+    color: white;
+    font-size: 16px;
+}
+
+.button:hover {
+    background-color: blue;
+    transition: 0.75s;
+}
+
+.call, .email {
+    display: flex;
+}
+
+.number {
+    padding-top: 13px;
+}
+
+.gmail {
+    padding-bottom: 0px;
+    display: flex;
+}
+
+.email {
+    padding-top: 8px;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    padding-left: 80px;
+    
+}
+
+.image {
+    margin-left: 150px;
+    margin-top: 100px;
+}
+
+.image img {
+   max-width: 400px;
+    height: auto; 
+    overflow: hidden;
+}
+
+.form {
+    margin-right: 120px;
+    margin-top: 60px;
+}
+
+
+@media (max-width: 1240px) {
+    .image {
+        width: 100%; 
+        max-width: 700px; 
+        height: auto; 
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    h1 {
+        text-align: left; 
+        padding-left: 5px; 
+    }
+/* 
+    .inputgroup input,
+    .inputgroup textarea,
+    .button {
+        
+        max-width: none; 
+    } */
+
+    .inputgroup {
+        margin: 15px 0;
+    }
+
+    .button {
+        width: 100%;
+    }
+
+    .container {
+        padding-left: 20px; 
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .image {
+        display: none; 
+    }
+
+    .form {
+        margin-right: 0;
+        margin-top: 20px; 
+        align-self: flex-start; 
+        padding-left: 10px; 
+    }
+}

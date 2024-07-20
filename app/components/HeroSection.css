@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+
+.hero-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0B1E45; /* Dark blue background */
+    color: white;
+    padding-left: 70px;
+    height: 63vh; /* Full viewport height */
+    box-sizing: border-box;
+}
+
+.hero-content {
+    max-width: 50%;
+    text-align: justify;
+}
+.hero-title, .hero-subtitle, .hero-description {
+    margin: 0;
+    text-align: justify;
+    width: 100%;
+}
+
+.hero-title, .hero-subtitle {
+    /* font-family: 'Open Sans', 'ExtraBold'; */
+    font-weight:700;
+    font-size: 2.2rem;
+    margin: 0;
+    
+}
+
+
+.hero-description {
+    font-family: 'Open Sans', sans-serif;
+    margin: 20px 0;
+    font-size: 0.9rem;
+    text-align: justify;
+    max-width: 80%;
+  
+    /* line-height: 1.5; */
+    
+}
+
+.hero-button {
+    background-color: white;
+    color: #0B1E45;
+    border: none;
+    padding: 8px 40px;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.hero-button:hover {
+    background-color: #e5e5e5;
+}
+
+.hero-image-container {
+    /* margin-left: 120px; */
+    margin-left: 40px;
+    padding-left: 150px;
+    margin-top: 75px;
+    max-width: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.hero-image {
+    max-height: 100%;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+/* Mobile view adjustments */
+
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        height: auto;
+    }
+
+    .hero-content {
+        max-width: 100%;
+    }
+
+    .hero-title, .hero-subtitle {
+        font-size: 2.1rem;
+    }
+
+    .hero-description {
+        font-size: 0.85rem;
+        max-width: 100%;
+    }
+
+    .hero-button {
+        padding: 8px 140px;
+        font-size: 0.9rem;
+    }
+
+    .hero-image-container {
+        margin-top: 20px;
+        padding-left: 0;
+        margin-left: 20px;
+        width: 100%; /* Make sure the container takes full width */
+        display: flex;
+        justify-content: center;
+    }
+
+    .hero-image {
+        width: 215%; /* Set to 100% of the container width */
+        max-width: 500px; /* Set a max-width for better control */
+        height: auto;
+    }
+}
