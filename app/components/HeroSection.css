@@ -135,15 +135,15 @@
 @media (min-width: 1400px) {
    
     .hero-content {
-        max-width: 50%; /* Maintain same proportion */
+        max-width: 50%; 
     }
 
     .hero-title, .hero-subtitle {
-        font-size: 2rem; /* Keep font size consistent */
+        font-size: 2rem; 
     }
 
     .hero-image-container {
-        margin-left: 350px; /* Ensure consistent spacing */
+        margin-left: 350px; 
     }
 
     .hero-image {

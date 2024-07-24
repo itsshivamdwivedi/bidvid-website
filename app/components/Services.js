@@ -56,12 +56,12 @@ export default function Services() {
   return (
     <section className="bg-white text-primary p-8">
       {/* Desktop Design */}
-      <div className="hidden md:flex max-w-7xl mx-auto flex-col md:flex-row items-start justify-between font-sans">
-        <div className="w-full md:w-1/2 ml-8 mt-8 mb-8">
+      <div className="hidden md:flex max-w-7xl mx-auto flex-col md:flex-row items-start justify-between font-sans services-container">
+        <div className="w-full md:w-1/2 ml-8 mt-8 mb-8 services-title">
           <h2 className="text-3xl font-bold ml-8 mb-4">Our Services</h2>
           <div className="space-y-4">
             {servicesData.map((service) => (
-              <div key={service.id} className="p-4 border-b">
+              <div key={service.id} className="p-4 border-b service-card">
                 <div
                   className={`flex justify-between items-center cursor-pointer p-4 text-justify ${
                     activeService && activeService.id === service.id
@@ -78,7 +78,7 @@ export default function Services() {
                   )}
                 </div>
                 {activeService && activeService.id === service.id && (
-                  <div className="mt-4 font-sans text-justify">
+                  <div className="mt-4 font-sans text-justify service-description">
                     <p>{service.description}</p>
                     <h4 className="mt-4 font-semibold">Key Features</h4>
                     <ul className="list-disc list-inside">
