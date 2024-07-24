@@ -2,12 +2,12 @@
   "name": "bidvid-website",
   "version": "0.1.0",
   "private": true,
-"scripts": {
+  "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "nextlint"
-},
+  },
   "dependencies": {
     "@chakra-ui/react": "^2.8.2",
     "@emotion/react": "^11.13.0",
@@ -25,6 +25,7 @@
     "nodemailer": "^6.9.14",
     "react": "^18",
     "react-dom": "^18",
+    "react-hook-form": "^7.52.1",
     "resend": "^3.5.0"
   },
   "devDependencies": {
