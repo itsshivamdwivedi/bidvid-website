@@ -1,51 +1,34 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-
 .hero-section {
     display: flex;
-    /* justify-content: space-between; */
     align-items: center;
-    background-color: #0B1E45; 
+    justify-content: space-between; /* Added this */
+    background-color: #0B1E45;
     color: white;
-    /* padding-left: 70px; */
-    height: 467px; 
+    height: 467px;
     box-sizing: border-box;
-    padding-left: 100px;
+    padding-left:100px;
 }
 
 .hero-content {
-    /* max-width: 50%;
-    text-align: justify; */
-    width: 590px;
-    height: 267px;
-    
-
-
+    width: 50%; /* Changed this to make it half of the container */
 }
+
 .hero-title, .hero-subtitle, .hero-description {
     margin: 0;
-    /* text-align: justify; */
-    width: 100%;
 }
 
 .hero-title, .hero-subtitle {
-   
-    font-weight:700;
+    font-weight: 700;
     font-size: 2rem;
     margin: 0;
-    
 }
-
 
 .hero-description {
     font-family: 'Open Sans', sans-serif;
     margin: 20px 0;
     font-size: 0.9rem;
-    text-align: justify;
-    max-width: 80%;
-  
-    
-    
 }
 
 .hero-button {
@@ -64,30 +47,18 @@
 }
 
 .hero-image-container {
-   
-    /* margin-left: 40px;
-    padding-left: 150px;
-    
-    max-width: 50%; */
-    margin-top: 90px;
-    margin-left: 150PX;
+    width: 50%; /* Changed this to make it half of the container */
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    margin-top: 80px;
 }
 
 .hero-image {
-    /* top: 50px; */
-    /* max-height: 100%;
-    max-width: 100%;
-    width: auto;   my previous css
-    height: auto; */
-    
-    width:534px;
-    height: 379.43px;
-
-
+    width: 534px;
+    height: auto; /* Ensure the aspect ratio is maintained */
 }
+
 /* Mobile view adjustments */
 
 @media (max-width: 768px) {
@@ -132,22 +103,17 @@
         height:auto;
 }
 }
-@media (min-width: 1400px) {
-   
-    .hero-content {
-        max-width: 50%; 
-    }
-
+@media (min-width: 1200px) {
     .hero-title, .hero-subtitle {
-        font-size: 2rem; 
+        font-size: 2.5rem; /* Increase font size for larger screens */
     }
 
-    .hero-image-container {
-        margin-left: 350px; 
+    .hero-description {
+        font-size: 1rem; /* Increase font size for larger screens */
     }
 
     .hero-image {
-        width: 534px;
-        height: 379.43px;
+        width: 540px; /* Increase image size for larger screens */
+        height: auto;
     }
 }

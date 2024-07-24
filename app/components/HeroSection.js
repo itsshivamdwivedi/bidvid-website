@@ -21,6 +21,7 @@ const HeroSection = () => {
     }, []);
 
     return (
+        <div className='hero-container'>
         <div className="hero-section">
             <div className="hero-content">
                 <h1 className="hero-title">Revolutionizing Bidding with</h1>
@@ -41,6 +42,7 @@ const HeroSection = () => {
                     height={isMobile ? 300 : 450} 
                 />
             </div>
+        </div>
         </div>
     );
 }
