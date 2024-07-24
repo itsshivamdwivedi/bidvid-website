@@ -24,14 +24,14 @@
 }
 .hero-title, .hero-subtitle, .hero-description {
     margin: 0;
-    text-align: justify;
+    /* text-align: justify; */
     width: 100%;
 }
 
 .hero-title, .hero-subtitle {
    
     font-weight:700;
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin: 0;
     
 }
