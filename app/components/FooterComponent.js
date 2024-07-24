@@ -7,7 +7,7 @@ const FooterComponent = () => {
                 <img 
                     src="/logo-bg-removed.png" 
                     alt="BidVid logo" 
-                    className="w-24 h-auto md:w-40 md:h-auto lg:pl-11" // Adjusted size for mobile and larger screens
+                    className="lg:w-28 lg:ml-4  h-auto md:w-40 md:h-auto  xl:ml-24 2xl:ml-28" // Adjusted size for mobile and larger screens
                 /> 
                 <div className="flex space-x-4 lg:pr-4"> 
                     <a href="#" className="hidden md:inline hover:underline">Contact Us</a>

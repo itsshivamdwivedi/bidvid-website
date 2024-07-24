@@ -30,20 +30,24 @@ const benefits = [
 const Benefits = () => {
   return (
     <div className="bg-darkBlue text-white py-16 font-sans">
-      
-      <div className="max-w-5xl ml-2 sm:ml-8 lg:ml-20 lg:mt-16 text-left lg:mb-20">
-        
-        <h2 className="text-3xl font-bold mb-10 l-4 sm:ml-4">Benefits</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-x-28 gap-y-24 pr-12 ml-8 sm:ml-4">
+      <div className="max-w-9xl ml-2 sm:ml-8 lg:ml-20 xl:ml-24 2xl:ml-28 lg:mt-16 xl:mt-20 2xl:mt-24 text-left lg:mb-12 xl:mb-12 2xl:mb-12">
+        <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-bold mb-6 l-4 sm:ml-4">
+          Benefits
+        </h2>
+        <div className="max-w-8xl grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 lg:gap-x-28 xl:gap-x-36 2xl:gap-x-48 gap-y-24 pr-12 ml-8 sm:ml-4">
           {benefits.map((benefit, index) => (
-            <div key={index} className="flex flex-col items-start">
+            <div key={index} className="flex flex-col items-start max-w-[535px]">
               <img
                 src={benefit.img}
                 alt={benefit.title}
-                className="w-16 h-16 mb-6"
+                className="w-16 h-16 lg:w-20 lg:h-20 xl:w-24 xl:h-24 mb-6"
               />
-              <h3 className="text-lg font-semibold mb-4">{benefit.title}</h3>
-              <p className="text-sm leading-relaxed">{benefit.description}</p>
+              <h3 className="text-lg lg:text-xl xl:text-2xl font-semibold mb-4">
+                {benefit.title}
+              </h3>
+              <p className="text-sm lg:text-base xl:text-lg leading-relaxed">
+                {benefit.description}
+              </p>
             </div>
           ))}
         </div>

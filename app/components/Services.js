@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Image from 'next/image';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'; 
+import "./Servicesection.css";
 
 const servicesData = [
   {
@@ -43,7 +44,7 @@ const servicesData = [
 ];
 
 export default function Services() {
-  const [activeService, setActiveService] = useState(null); // Initial state 
+  const [activeService, setActiveService] = useState(servicesData[0]); // Initial state set to first service
 
   const toggleService = (service) => {
     if (activeService && activeService.id === service.id) {

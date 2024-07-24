@@ -1,0 +1,52 @@
+.services-container {
+    max-width: 100%;
+    padding: 0 2rem;
+    margin-top: 30px;
+    margin-bottom: 30px;
+  }
+  
+  .services-title {
+    margin-left: 1rem;
+  }
+  
+  .service-card {
+    /* border: 1px solid #ddd; */
+    border-radius: 0.5rem;
+    overflow: hidden;
+  }
+  
+  .service-description {
+    padding: 1rem;
+  }
+  
+  .service-description p {
+    margin: 0 0 1rem 0;
+  }
+  
+  .service-description ul {
+    padding-left: 1.5rem;
+  }
+  
+  @media (min-width: 1400px) {
+    .services-title {
+      margin-left: 0.7rem;
+    }
+    
+    .service-card {
+      padding: 0.5rem 1rem;
+    }
+  
+    .service-description {
+      padding: 1rem 2rem;
+    }
+  
+    .service-description p,
+    .service-description ul {
+      margin-left: 1rem;
+    }
+  
+    .service-description h4 {
+      margin-left: 1rem;
+    }
+  }
+  

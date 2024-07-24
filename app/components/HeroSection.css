@@ -12,7 +12,7 @@
 }
 
 .hero-content {
-    width: 50%; /* Changed this to make it half of the container */
+    width: 45%; /* Changed this to make it half of the container */
 }
 
 .hero-title, .hero-subtitle, .hero-description {
@@ -55,7 +55,7 @@
 }
 
 .hero-image {
-    width: 534px;
+    width: 434px;
     height: auto; /* Ensure the aspect ratio is maintained */
 }
 
@@ -103,9 +103,20 @@
         height:auto;
 }
 }
-@media (min-width: 1300px) {
+@media (min-width:1000px) and (max-width:1350px){
+    .hero-image{
+
+    }
+    .hero-section{
+        height: 390px;
+    }
+}
+@media (min-width: 1400px) {
+    .hero-content{
+        width: 40%;
+    }
     .hero-title, .hero-subtitle {
-        font-size: 2.5rem; /* Increase font size for larger screens */
+        /* font-size: 2.5rem;  */
     }
 
     .hero-description {
