@@ -3,18 +3,24 @@
 
 .hero-section {
     display: flex;
-    justify-content: space-between;
+    /* justify-content: space-between; */
     align-items: center;
-    background-color: #0B1E45; /* Dark blue background */
+    background-color: #0B1E45; 
     color: white;
-    padding-left: 70px;
-    height: 63vh; /* Full viewport height */
+    /* padding-left: 70px; */
+    height: 467px; 
     box-sizing: border-box;
+    padding-left: 100px;
 }
 
 .hero-content {
-    max-width: 50%;
-    text-align: justify;
+    /* max-width: 50%;
+    text-align: justify; */
+    width: 590px;
+    height: 267px;
+    
+
+
 }
 .hero-title, .hero-subtitle, .hero-description {
     margin: 0;
@@ -23,7 +29,7 @@
 }
 
 .hero-title, .hero-subtitle {
-    /* font-family: 'Open Sans', 'ExtraBold'; */
+   
     font-weight:700;
     font-size: 2.2rem;
     margin: 0;
@@ -38,7 +44,7 @@
     text-align: justify;
     max-width: 80%;
   
-    /* line-height: 1.5; */
+    
     
 }
 
@@ -58,21 +64,29 @@
 }
 
 .hero-image-container {
-    /* margin-left: 120px; */
-    margin-left: 40px;
+   
+    /* margin-left: 40px;
     padding-left: 150px;
-    margin-top: 75px;
-    max-width: 50%;
+    
+    max-width: 50%; */
+    margin-top: 90px;
+    margin-left: 210PX;
     display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
 .hero-image {
-    max-height: 100%;
+    /* top: 50px; */
+    /* max-height: 100%;
     max-width: 100%;
-    width: auto;
-    height: auto;
+    width: auto;   my previous css
+    height: auto; */
+    
+    width:534px;
+    height: 382.43px;
+
+
 }
 /* Mobile view adjustments */
 
@@ -107,14 +121,14 @@
         margin-top: 20px;
         padding-left: 0;
         margin-left: 20px;
-        width: 100%; /* Make sure the container takes full width */
+        width: 100%;
         display: flex;
         justify-content: center;
     }
 
     .hero-image {
-        width: 215%; /* Set to 100% of the container width */
-        max-width: 500px; /* Set a max-width for better control */
-        height: auto;
-    }
+        width: 215%;
+        max-width: 500px; 
+        height:auto;
+}
 }

@@ -1,40 +1,144 @@
+"use client";
+
+
+import React, { useState } from 'react';
 import Image from 'next/image';
+import { Input, Textarea, Button } from '@chakra-ui/react';
+import HeroSection from './components/HeroSection';
 import Services from './components/Services';
 import Benefits from './components/Benefits';
-import ContactForm from './components/ContactForm';
 import FooterComponent from './components/FooterComponent';
-import HeroSection from './components/HeroSection';
+import './components/ContactForm.css';
 
+const Page = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
 
-export default function Home() {
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    setIsLoading(true);
+
+    console.log('Sending data:', formData);
+
+    try {
+      const response = await fetch('/api/send', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log('Response received:', response);
+
+      if (!response.ok) {
+        const errorResult = await response.json();
+        throw new Error(errorResult.error || 'Failed to send email');
+      }
+
+      const result = await response.json();
+      console.log('Email sent successfully:', result);
+      alert('Email sent successfully');
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred: ' + error.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
   return (
     <>
-      
-      {/* <main className="bg-darkBlue text-white h-90 flex flex-col md:flex-row items-center justify-between p-8">
-        <div className="text-center md:text-left max-w-2xl md:w-1/2">
-          <h1 className="text-4xl md:text-4xl font-bold mb-4">Revolutionizing Bidding with AI-Powered Optimization</h1>
-          <p className="text-lg mb-6">
-            BidVid is a cutting-edge ad technology platform that uses advanced AI algorithms to optimize advertising yield for digital media buyers. Boost revenue and enhance user experience seamlessly.
-          </p>
-          <button className="bg-white text-primary py-2 px-4 rounded-lg font-semibold">Contact Us</button>
-        </div>
-      <div className="mt-24  ml-32 pl-60 md:mt-0 md:w-1/2 flex ">
-          <Image src="/banner.png" alt="Robot Hand Image" width={400} height={400} />
-        </div>
-      </main> */}
-      {/* <section className="bg-white text-primary p-8">
-        <div className="max-w-4xl mx-auto">
-        Hello
-        </div>
-      </section> */}
       <HeroSection />
-       <Services />
-       <Benefits />
-       <ContactForm />
-       <FooterComponent />
+      <Services />
+      <Benefits />
+
+      <div className="container">
+        <div className="form">
+          <h1>
+            <b>Contact Us</b>
+          </h1>
+
+          <form onSubmit={handleSubmit}>
+            <div className="inputgroup">
+              <Input
+                type="text"
+                required
+                name="name"
+                errorBorderColor="red.300"
+                value={formData.name}
+                onChange={handleChange}
+              />
+              <label>Enter Your Name*</label>
+            </div>
+            <div className="inputgroup">
+              <Input
+                type="email"
+                required
+                name="email"
+                errorBorderColor="red.300"
+                value={formData.email}
+                onChange={handleChange}
+              />
+              <label>Enter Your Email*</label>
+            </div>
+            <div className="inputgroup">
+              <Textarea
+                required
+                name="message"
+                errorBorderColor="red.300"
+                value={formData.message}
+                onChange={handleChange}
+              ></Textarea>
+              <label>Write Your Message*</label>
+            </div>
+            <Button
+              className="button"
+              type="submit"
+              colorScheme="blue"
+              mt={4}
+              isLoading={isLoading} 
+            >
+              Submit
+            </Button>
+          </form>
+          <div className="call">
+            <span>
+              <img src="/call.webp" width="58px" alt="call" />
+            </span>
+            <span className="number">9635462536</span>
+          </div>
+          <div className="gmail">
+            <span>
+              <img src="/email.webp" width="58px" alt="email" />
+            </span>
+            <span className="email">support.sugarloger@gmail.com</span>
+          </div>
+        </div>
+        <div className="image">
+          <Image
+            src="/robot.png"
+            layout="fixed"
+            width={700}
+            height={400}
+            alt="robot"
+          />
+        </div>
+      </div>
+
+      <FooterComponent />
     </>
   );
-}
+};
 
-
-
+export default Page;

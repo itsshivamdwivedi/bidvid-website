@@ -4,10 +4,10 @@ import Link from 'next/link';
 const Navbar = () => {
   return (
     <nav className="bg-white p-4 shadow-md flex justify-between items-center">
-      <div className="flex items-center">
-        <Image src="/logo.png" alt="BidVid Logo" width={120} height={40} />
+      <div className="flex items-center lg:ml-12"> {/* Added padding-left for large screens */}
+        <Image src="/logo.png" alt="BidVid Logo" width={172} height={86} />
       </div>
-      <div className="space-x-4">
+      <div className="space-x-4 lg:pr-6"> {/* Added padding-right for large screens */}
         <Link href="#about-us" legacyBehavior>
           <a className="text-gray-800 hover:text-blue-600">About Us</a>
         </Link>

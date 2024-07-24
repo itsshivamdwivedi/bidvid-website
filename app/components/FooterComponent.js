@@ -4,8 +4,12 @@ const FooterComponent = () => {
     return (
         <footer className="bg-gray-900 text-white h-32 flex flex-col justify-between p-6">
             <div className="flex justify-between items-center">
-                <img src="/logoblack.png" alt="BidVid Logo" className="h-10" />
-                <div className="flex space-x-4">
+                <img 
+                    src="/logo-bg-removed.png" 
+                    alt="BidVid logo" 
+                    className="w-24 h-auto md:w-40 md:h-auto lg:pl-11" // Adjusted size for mobile and larger screens
+                /> 
+                <div className="flex space-x-4 lg:pr-4"> 
                     <a href="#" className="hidden md:inline hover:underline">Contact Us</a>
                     <a href="#" className="hover:underline">About Us</a>
                 </div>

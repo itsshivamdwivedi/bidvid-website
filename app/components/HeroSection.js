@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import './HeroSection.css';
+import Image from 'next/image';
 
 const HeroSection = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -33,13 +34,15 @@ const HeroSection = () => {
             </div>
             <div className="hero-image-container">
                 <Image
-                    src={isMobile ? "./mobile-banner.png" : "./banner.png"} 
+                    src={isMobile ? "/mobile-banner.png" : "/banner.png"} 
                     alt="Robot Hand" 
-                    className="hero-image" 
+                    className="hero-image"
+                    width={isMobile ? 500 : 800}
+                    height={isMobile ? 300 : 450} 
                 />
             </div>
         </div>
     );
 }
 
-export default HeroSection;
+export default HeroSection;
