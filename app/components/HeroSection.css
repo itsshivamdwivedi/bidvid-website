@@ -132,3 +132,22 @@
         height:auto;
 }
 }
+@media (min-width: 1400px) {
+   
+    .hero-content {
+        max-width: 50%; /* Maintain same proportion */
+    }
+
+    .hero-title, .hero-subtitle {
+        font-size: 2rem; /* Keep font size consistent */
+    }
+
+    .hero-image-container {
+        margin-left: 350px; /* Ensure consistent spacing */
+    }
+
+    .hero-image {
+        width: 534px;
+        height: 379.43px;
+    }
+}
