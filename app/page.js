@@ -8,6 +8,7 @@ import Services from './components/Services';
 import Benefits from './components/Benefits';
 import FooterComponent from './components/FooterComponent';
 import './components/ContactForm.css';
+import ExportedImage from "next-image-export-optimizer";
 
 const Page = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -94,7 +95,7 @@ const Page = () => {
           </div>
         </div>
         <div className="image">
-          <Image
+          <ExportedImage
             src="/robot.png"
             layout="fixed"
             width={700}

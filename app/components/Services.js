@@ -4,6 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'; 
 import "./Servicesection.css";
+import ExportedImage from 'next-image-export-optimizer';
 
 const servicesData = [
   {
@@ -97,7 +98,7 @@ export default function Services() {
         <div className="w-full md:w-1/2 mt-80 pt-36 md:mt-0 flex justify-center">
           <div className="transition-transform mt-0">
             {activeService && (
-              <Image
+              <ExportedImage
                 src={activeService.image}
                 alt={activeService.title}
                 width={517}
@@ -115,7 +116,7 @@ export default function Services() {
           {servicesData.map((service) => (
             <div key={service.id} className="border-b">
               <div className="flex flex-col items-start text-left">
-                <Image
+                <ExportedImage
                   src={service.image}
                   alt={service.title}
                   width={300}

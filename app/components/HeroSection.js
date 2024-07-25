@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import './HeroSection.css';
 import React from 'react';
 import Image from 'next/image';
+import ExportedImage from "next-image-export-optimizer";
 
 const HeroSection = () => {
     const [isMobile, setIsMobile] = useState(false);
@@ -35,7 +36,7 @@ const HeroSection = () => {
                 <button className="hero-button">Contact Us</button>
             </div>
             <div className="hero-image-container">
-                <Image
+                <ExportedImage
                     src={isMobile ? "/mobile-banner.png" : "/banner.png"} 
                     alt="Robot Hand" 
                     className="hero-image"
