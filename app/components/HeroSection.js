@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import './HeroSection.css';
+import React from 'react';
 import Image from 'next/image';
 
 const HeroSection = () => {

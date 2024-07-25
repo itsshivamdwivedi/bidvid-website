@@ -1,10 +1,6 @@
 // next.config.mjs
-const nextConfig = {
+export default {
     reactStrictMode: true,
-    experimental: {
-      appDir: true,
-    },
   };
   
-  export default nextConfig;
   

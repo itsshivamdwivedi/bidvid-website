@@ -1,5 +1,6 @@
 "use client";
 import { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/24/outline'; 
 import "./Servicesection.css";
