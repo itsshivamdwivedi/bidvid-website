@@ -4,7 +4,7 @@ const FooterComponent = () => {
     return (
         <footer className="bg-gray-900 text-white h-32 md:h-auto flex flex-col md:flex-col justify-between p-4 md:p-6">
             {/* Aligning content for mobile and larger screens */}
-            <div className="flex flex-row-reverse justify-between items-center md:flex-row md:justify-between">
+            <div className="flex flex-row justify-between items-center md:flex-row md:justify-between">
                 <img 
                     src="/logo-bg-removed.png" 
                     alt="BidVid logo" 
