@@ -62,13 +62,13 @@
 /* Mobile view adjustments */
 @media (max-width: 768px) {
     html,body{
-        /* overflow: hidden; */
+        overflow-x: hidden;
          scroll-behavior: smooth;
     }
     .hero-container {
-        overflow-x: hidden;
+        
         width: 100vw;
-        /* overflow: hidden; */
+        
     }
     .hero-section {
         flex-direction: column;
