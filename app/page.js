@@ -1,7 +1,6 @@
 "use client";
 
-
-import React, { useState } from 'react';
+import React from 'react';
 import Image from 'next/image';
 import { Input, Textarea, Button } from '@chakra-ui/react';
 import HeroSection from './components/HeroSection';
@@ -11,52 +10,6 @@ import FooterComponent from './components/FooterComponent';
 import './components/ContactForm.css';
 
 const Page = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: '',
-  });
-
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    setIsLoading(true);
-
-    console.log('Sending data:', formData);
-
-    try {
-      const response = await fetch('/api/send', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      console.log('Response received:', response);
-
-      if (!response.ok) {
-        const errorResult = await response.json();
-        throw new Error(errorResult.error || 'Failed to send email');
-      }
-
-      const result = await response.json();
-      console.log('Email sent successfully:', result);
-      alert('Email sent successfully');
-    } catch (error) {
-      console.error('Error:', error);
-      alert('An error occurred: ' + error.message);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleChange = (event) => {
-    const { name, value } = event.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
   return (
     <>
       <HeroSection />
@@ -69,15 +22,13 @@ const Page = () => {
             <b>Contact Us</b>
           </h1>
 
-          <form onSubmit={handleSubmit}>
+          <form>
             <div className="inputgroup">
               <Input
                 type="text"
                 required
                 name="name"
                 errorBorderColor="red.300"
-                value={formData.name}
-                onChange={handleChange}
               />
               <label>Enter Your Name*</label>
             </div>
@@ -87,8 +38,6 @@ const Page = () => {
                 required
                 name="email"
                 errorBorderColor="red.300"
-                value={formData.email}
-                onChange={handleChange}
               />
               <label>Enter Your Email*</label>
             </div>
@@ -97,8 +46,6 @@ const Page = () => {
                 required
                 name="message"
                 errorBorderColor="red.300"
-                value={formData.message}
-                onChange={handleChange}
               ></Textarea>
               <label>Write Your Message*</label>
             </div>
@@ -107,7 +54,6 @@ const Page = () => {
               type="submit"
               colorScheme="blue"
               mt={4}
-              isLoading={isLoading} 
             >
               Submit
             </Button>
