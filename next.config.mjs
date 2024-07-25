@@ -1,9 +1,10 @@
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-
-/** @type {import('next').NextConfig} */
+// next.config.mjs
 const nextConfig = {
-  reactStrictMode: true,
-};
-
-export default nextConfig;
+    reactStrictMode: true,
+    experimental: {
+      appDir: true,
+    },
+  };
+  
+  export default nextConfig;
+  
