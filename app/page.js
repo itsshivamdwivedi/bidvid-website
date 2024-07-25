@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import Image from 'next/image';
 import { Input, Textarea, Button } from '@chakra-ui/react';
 import HeroSection from './components/HeroSection';
@@ -10,6 +10,21 @@ import FooterComponent from './components/FooterComponent';
 import './components/ContactForm.css';
 
 const Page = () => {
+  const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    // Handle form submission logic
+    setIsLoading(false);
+  };
+
   return (
     <>
       <HeroSection />
@@ -22,13 +37,15 @@ const Page = () => {
             <b>Contact Us</b>
           </h1>
 
-          <form>
+          <form onSubmit={handleSubmit}>
             <div className="inputgroup">
               <Input
                 type="text"
                 required
                 name="name"
                 errorBorderColor="red.300"
+                value={formData.name}
+                onChange={handleChange}
               />
               <label>Enter Your Name*</label>
             </div>
@@ -38,6 +55,8 @@ const Page = () => {
                 required
                 name="email"
                 errorBorderColor="red.300"
+                value={formData.email}
+                onChange={handleChange}
               />
               <label>Enter Your Email*</label>
             </div>
@@ -46,6 +65,8 @@ const Page = () => {
                 required
                 name="message"
                 errorBorderColor="red.300"
+                value={formData.message}
+                onChange={handleChange}
               ></Textarea>
               <label>Write Your Message*</label>
             </div>
@@ -54,6 +75,7 @@ const Page = () => {
               type="submit"
               colorScheme="blue"
               mt={4}
+              isLoading={isLoading}
             >
               Submit
             </Button>
