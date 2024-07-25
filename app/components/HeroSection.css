@@ -3,16 +3,16 @@
 .hero-section {
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Added this */
+    justify-content: space-between;
     background-color: #0B1E45;
     color: white;
     height: 467px;
     box-sizing: border-box;
-    padding-left:100px;
+    padding-left: 100px;
 }
 
 .hero-content {
-    width: 45%; /* Changed this to make it half of the container */
+    width: 45%;
 }
 
 .hero-title, .hero-subtitle, .hero-description {
@@ -47,7 +47,7 @@
 }
 
 .hero-image-container {
-    width: 50%; /* Changed this to make it half of the container */
+    width: 50%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -56,88 +56,72 @@
 
 .hero-image {
     width: 434px;
-    height: auto; /* Ensure the aspect ratio is maintained */
+    height: auto;
 }
 
-/* Mobile view adjustments */
 @media (max-width: 768px) {
-    html,body{
+    html, body {
         overflow-x: hidden;
-         scroll-behavior: smooth;
+        scroll-behavior: smooth;
     }
     .hero-container {
-        
         width: 100vw;
-        
     }
     .hero-section {
         flex-direction: column;
         align-items: center;
-        /* text-align: center; */
         width: 100%;
         padding: 20px;
         height: auto;
     }
-
     .hero-content {
         width: 100%;
-        margin-bottom: 20px; /* Added margin to separate the content from the image */
+        margin-bottom: 20px;
     }
-
     .hero-title, .hero-subtitle {
         font-size: 2.1rem;
     }
-
     .hero-description {
         font-size: 0.85rem;
-        max-width: 90%; /* Ensuring it fits well within smaller screens */
+        max-width: 90%;
     }
-
     .hero-button {
-        padding: 10px; /* Ensure padding matches the design */
-        width: 328px;  /* Set button width for mobile */
-        height: 44px;  /* Set button height for mobile */
+        padding: 10px;
+        width: 328px;
+        height: 44px;
         font-size: 0.9rem;
-        border-radius: 12px; /* Set border-radius for mobile */
-        margin-top: 10px; /* Added margin for spacing */
+        border-radius: 12px;
+        margin-top: 10px;
     }
-
     .hero-image-container {
-        width: 100%; /* Make sure it uses the full width */
+        width: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
-
     .hero-image {
-        width: 401px; /* Set the image width as specified */
-        height: 286.63px; /* Set the image height as specified */
-        max-width: 100%; /* Ensure it does not overflow the container */
-        height: auto; /* Maintain aspect ratio */
+        width: 401px;
+        height: 286.63px;
+        max-width: 100%;
+        height: auto;
     }
 }
-@media (min-width:1000px) and (max-width:1350px){
-    .hero-image{
 
-    }
-    .hero-section{
+@media (min-width: 1000px) and (max-width: 1350px) {
+    .hero-section {
         height: 390px;
     }
 }
+
 @media (min-width: 1400px) {
-    .hero-content{
+    .hero-content {
         width: 40%;
     }
-    .hero-title, .hero-subtitle {
-        /* font-size: 2.5rem;  */
-    }
-
     .hero-description {
-        font-size: 1rem; /* Increase font size for larger screens */
+        font-size: 1rem;
     }
-
     .hero-image {
-        width: 540px; /* Increase image size for larger screens */
+        width: 540px;
         height: auto;
     }
 }
