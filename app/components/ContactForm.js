@@ -3,20 +3,20 @@
 import Image from "next/image";
 import "./ContactForm.css";
 import { useState } from "react";
-import { useToast, Input, Textarea, Button } from "@chakra-ui/react"; 
+import { useToast, Input, Textarea, Button } from "@chakra-ui/react";
 
 const initValues = {
   name: "",
   email: "",
   message: "",
 };
-const initState = { values: initValues, isLoading: false }; 
+const initState = { values: initValues, isLoading: false };
 
 export default function Contact() {
   const [state, setState] = useState(initState);
   const [touched, setTouched] = useState({});
   const { values, isLoading } = state;
-  const toast = useToast(); 
+  const toast = useToast();
 
   const handleChange = ({ target }) =>
     setState((prev) => ({
@@ -34,13 +34,12 @@ export default function Contact() {
     }));
 
   const handleSubmit = async (e) => {
-    e.preventDefault(); 
+    e.preventDefault();
     setState((prev) => ({
       ...prev,
       isLoading: true,
     }));
 
-    
     setTimeout(() => {
       setState((prev) => ({
         ...prev,
@@ -73,20 +72,20 @@ export default function Contact() {
               errorBorderColor="red.300"
               value={values.name}
               onChange={handleChange}
-              onBlur={handleBlur} 
+              onBlur={handleBlur}
             />
             <label>Enter Your Name*</label>
           </div>
           <div className="inputgroup">
             <Input
               isInvalid={touched.email && !values.email}
-              type="email" 
+              type="email"
               required
-              name="email" 
+              name="email"
               errorBorderColor="red.300"
               value={values.email}
               onChange={handleChange}
-              onBlur={handleBlur} 
+              onBlur={handleBlur}
             />
             <label>Enter Your Email*</label>
           </div>
@@ -98,14 +97,14 @@ export default function Contact() {
               errorBorderColor="red.300"
               value={values.message}
               onChange={handleChange}
-              onBlur={handleBlur} 
+              onBlur={handleBlur}
             ></Textarea>
             <label>Write Your Message*</label>
           </div>
           <Button
             className="button"
-            type="submit" 
-            isLoading={isLoading} 
+            type="submit"
+            isLoading={isLoading}
             colorScheme="blue"
             mt={4}
           >
