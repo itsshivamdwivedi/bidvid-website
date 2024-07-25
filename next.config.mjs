@@ -5,7 +5,7 @@ export default {
       output: 'export',
     reactStrictMode: true,
     images: {
-        domains: ['bidvid.in'],
+        
         unoptimized: true,
     },
   };
