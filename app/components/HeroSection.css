@@ -60,18 +60,28 @@
 }
 
 /* Mobile view adjustments */
-
 @media (max-width: 768px) {
+    html,body{
+        /* overflow: hidden; */
+         scroll-behavior: smooth;
+    }
+    .hero-container {
+        overflow-x: hidden;
+        width: 100vw;
+        /* overflow: hidden; */
+    }
     .hero-section {
         flex-direction: column;
         align-items: center;
-        text-align: center;
+        /* text-align: center; */
+        width: 100%;
         padding: 20px;
         height: auto;
     }
 
     .hero-content {
-        max-width: 100%;
+        width: 100%;
+        margin-bottom: 20px; /* Added margin to separate the content from the image */
     }
 
     .hero-title, .hero-subtitle {
@@ -80,28 +90,31 @@
 
     .hero-description {
         font-size: 0.85rem;
-        max-width: 100%;
+        max-width: 90%; /* Ensuring it fits well within smaller screens */
     }
 
     .hero-button {
-        padding: 8px 140px;
+        padding: 10px; /* Ensure padding matches the design */
+        width: 328px;  /* Set button width for mobile */
+        height: 44px;  /* Set button height for mobile */
         font-size: 0.9rem;
+        border-radius: 12px; /* Set border-radius for mobile */
+        margin-top: 10px; /* Added margin for spacing */
     }
 
     .hero-image-container {
-        margin-top: 20px;
-        padding-left: 0;
-        margin-left: 20px;
-        width: 100%;
+        width: 100%; /* Make sure it uses the full width */
         display: flex;
         justify-content: center;
+        align-items: center;
     }
 
     .hero-image {
-        width: 215%;
-        max-width: 500px; 
-        height:auto;
-}
+        width: 401px; /* Set the image width as specified */
+        height: 286.63px; /* Set the image height as specified */
+        max-width: 100%; /* Ensure it does not overflow the container */
+        height: auto; /* Maintain aspect ratio */
+    }
 }
 @media (min-width:1000px) and (max-width:1350px){
     .hero-image{
