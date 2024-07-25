@@ -4,7 +4,7 @@ export default {
     distDir: 'dist',
       output: 'export',
     reactStrictMode: true,
-    unoptimized: true,
+    unoptimized: false,
   };
   
   

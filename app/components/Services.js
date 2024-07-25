@@ -16,7 +16,7 @@ const servicesData = [
       'Real-time analysis of user behavior and market conditions',
       'Seamless integration with your existing ad tech stack',
     ],
-    image: '/Real-Time Bid Optimization Desktop.png',
+    image: '/real_time_bid_desktop.png',
   },
   {
     id: 2,
