@@ -4,10 +4,10 @@ export default {
     distDir: 'dist',
       output: 'export',
     reactStrictMode: true,
-    images: {
+    // images: {
         
-        unoptimized: true,
-    },
+    //     unoptimized: true,
+    // },
   };
   
   
