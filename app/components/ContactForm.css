@@ -72,13 +72,15 @@ h1 {
     background-color: blue;
     transition: 0.75s;
 }
-
+.call{
+    padding-top: 10px;
+}
 .call, .email {
     display: flex;
 }
 
 .number {
-    padding-top: 13px;
+    padding-top: 3px;
 }
 
 .gmail {
@@ -87,7 +89,7 @@ h1 {
 }
 
 .email {
-    padding-top: 8px;
+    padding-top: 3px;
 }
 
 .container {

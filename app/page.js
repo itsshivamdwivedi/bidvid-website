@@ -83,13 +83,13 @@ const Page = () => {
           </form>
           <div className="call">
             <span>
-              <img src="/call.webp" width="58px" alt="call" />
+              <img src="/call1.png" width="28px" alt="call" />
             </span>
             <span className="number">9635462536</span>
           </div>
           <div className="gmail">
             <span>
-              <img src="/email.webp" width="58px" alt="email" />
+              <img src="/mail1.png" width="28px" alt="email" />
             </span>
             <span className="email">support.sugarloger@gmail.com</span>
           </div>
