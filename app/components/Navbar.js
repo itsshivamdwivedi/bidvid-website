@@ -2,14 +2,15 @@ import ExportedImage from 'next-image-export-optimizer';
 // import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
+import "./Navbar.css"
 
 const Navbar = () => {
   return (
-    <nav className="bg-white p-4 shadow-md flex justify-between items-center">
-      <div className="flex items-center lg:ml-12 "> {/* Added padding-left for large screens */}
-        <ExportedImage src="/logo.png" alt="BidVid Logo" width={102} height={49} />
+    <nav className="bg-white p-4 shadow-md flex justify-between items-center nav-bar">
+      <div className="flex items-center  "> 
+        <ExportedImage src="/logo.png" alt="BidVid Logo" width={141} height={86} />
       </div>
-      <div className="space-x-4 lg:pr-6"> {/* Added padding-right for large screens */}
+      <div className="space-x-4 lg:pr-6"> 
         <Link href="#about-us" legacyBehavior>
           <a className="text-gray-800 hover:text-blue-600">About Us</a>
         </Link>

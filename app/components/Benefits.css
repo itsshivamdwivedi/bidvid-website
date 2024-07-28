@@ -1,0 +1,40 @@
+/* Default Styles */
+.benefits-parent {
+    padding: 0;
+    margin-left: 1.5rem; 
+}
+
+.benefits-container {
+    
+    padding-bottom: 50px; /* Example of mobile-specific style */
+    margin-left: 0;
+}
+.benefits-text {
+    padding-bottom: 50px; /* Example of mobile-specific style */
+    margin-left: 0;
+}
+/* Styles for Tablets and Larger Screens */
+@media (min-width: 668px) {
+    .benefits-parent {
+        padding: 0; 
+        margin-left: 1.5rem;
+    }
+}
+/* Styles for Desktop Screens */
+@media (min-width: 1000px) {
+    .benefits-parent {
+        /* margin-left: 2rem;  */
+        padding: 30px 0px 0px 80px; 
+    }
+
+    .benefits-container {
+        max-width: 1440px;
+        margin: 0 auto; /* Center container for desktop */
+    }
+
+    .benefits-text {
+        max-width: 1440px;
+        margin: 0 auto; /* Center text for desktop */
+        padding-bottom: 50px;
+    }
+}

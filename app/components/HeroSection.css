@@ -1,14 +1,28 @@
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing:border-box;
+}
+.hero-container{
+    /* max-width: 1280px; */
+    background-color: #0B1E45;
+    width: 100%;
+}
 .hero-section {
+    max-width: 1440px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: #0B1E45;
+    /* background-color: #0B1E45; */
+    margin: 0px auto 0px;
+    padding: 100px 0px 100px 100px;
     color: white;
     height: 467px;
     box-sizing: border-box;
-    padding-left: 100px;
+    /* padding-left: 100px; */
 }
 
 .hero-content {
