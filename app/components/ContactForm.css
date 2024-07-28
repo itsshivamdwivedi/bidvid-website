@@ -12,7 +12,7 @@ h1 {
 
 .inputgroup label {
     position: absolute;
-    top: 50%;
+    top: 16px;
     left: 16px; 
     transform: translateY(-50%);
     font-size: 16px;
