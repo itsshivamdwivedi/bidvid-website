@@ -90,10 +90,10 @@
     }
     .hero-content {
         width: 100%;
-        margin-bottom: 20px;
+        /* margin-bottom: 20px; */
     }
     .hero-title, .hero-subtitle {
-        font-size: 2.1rem;
+        font-size: 2.4rem;
     }
     .hero-description {
         font-size: 0.85rem;
@@ -114,11 +114,12 @@
         align-items: center;
     }
     .hero-image {
-        width: 401px;
-        height: 286.63px;
-        max-width: 100%;
-        height: auto;
+        width: 601px;
+        height: 330.63px;
+        /* max-width: 100%; */
+        /* height: auto; */
         margin-left: 40px;
+    
     }
 }
 

@@ -96,7 +96,7 @@ const Page = () => {
         </div>
         <div className="image">
           <ExportedImage
-            src="/robot.png"
+            src="/contact-robot.jpg"
             layout="fixed"
             width={700}
             height={400}
