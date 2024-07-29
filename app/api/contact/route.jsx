@@ -5,11 +5,10 @@ import sanitizeHtml from 'sanitize-html';
 // Helper function to set CORS headers
 function setCORSHeaders(response) {
   response.headers.set('Access-Control-Allow-Origin', '*');
-  response.headers.set('Access-Control-Allow-Methods', 'OPTIONS, GET, POST');
+  response.headers.set('Access-Control-Allow-Methods', 'OPTIONS, GET, POST, PUT, PATCH, DELETE');
   response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  if (request.method === 'OPTIONS') {
-    return response;
-  }
+  response.headers.set('Access-Control-Expose-Headers', 'WWW-Authenticate');
+  return response;
 }
 
 export async function OPTIONS() {
@@ -47,6 +46,12 @@ export async function POST(request) {
 
     const transporter = nodemailer.createTransport({
       service: 'gmail',
+      host:'smtp.gmail.com',
+      tls: {
+        ciphers: "SSLv3",
+    },
+    port: 587,
+    secure: false,
       auth: {
         user: username,
         pass: password,
