@@ -7,7 +7,9 @@ function setCORSHeaders(response) {
   response.headers.set('Access-Control-Allow-Origin', '*');
   response.headers.set('Access-Control-Allow-Methods', 'OPTIONS, GET, POST');
   response.headers.set('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-  return response;
+  if (request.method === 'OPTIONS') {
+    return response;
+  }
 }
 
 export async function OPTIONS() {
