@@ -73,7 +73,26 @@ h1 {
     transition: 0.75s;
 }
 .call{
-    padding-top: 10px;
+    padding-top: 20px;
+    gap: 8px;
+    margin-bottom: 8px
+}
+.call img {
+    padding-top: 5px;
+    
+}
+.gmail {
+    gap: 8px;
+    padding-bottom: 0px;
+    display: flex;
+}
+.gmail img{
+
+
+}
+.email {
+    /* padding-top: 3px; */
+    font-size: 20px;
 }
 .call, .email {
     display: flex;
@@ -81,16 +100,10 @@ h1 {
 
 .number {
     padding-top: 3px;
+    font-size: 20px;
 }
 
-.gmail {
-    padding-bottom: 0px;
-    display: flex;
-}
 
-.email {
-    padding-top: 3px;
-}
 
 .container {
     display: flex;
@@ -147,7 +160,7 @@ h1 {
     }
 }
 
-@media (max-width: 768px) {
+@media (min-width:400px) and (max-width:800px) {
     h1 {
         text-align: left; 
         padding-left: 5px; 
@@ -155,6 +168,42 @@ h1 {
 
     .inputgroup {
         margin: 15px 0;
+    }
+
+    
+
+    .container {
+        padding-left: 15px; 
+        flex-direction: column; 
+        align-items: flex-start; 
+    }
+
+    .image {
+        display: none; 
+    }
+
+    .form {
+        margin-right: 0;
+        /* margin-top: 20px;  */
+        align-self: flex-start; 
+        padding-left: 10px;
+        margin-bottom: 40px;
+    }
+}
+
+@media (min-width:300px) and (max-width: 400px) {
+    h1 {
+        text-align: left; 
+        padding-left: 5px; 
+    }
+
+    .inputgroup {
+        margin: 15px 0;
+    }
+    .inputgroup input,
+    .inputgroup textarea,
+    .button{
+        width: 300px;
     }
 
     

@@ -4,41 +4,34 @@ import React from "react";
 import Link from "next/link";
 import "../components/ContactForm.css";
 import ExportedImage from "next-image-export-optimizer";
+
 export default function Contact() {
   async function handleSubmit(event) {
     event.preventDefault();
     const formData = new FormData(event.target);
     const name = formData.get("name").trim();
-    const email = formData.get("email").trim();
+    const number = formData.get("number").trim();
     const message = formData.get("message").trim();
 
     // Validate fields
-    if (!name || !email || !message) {
+    if (!name || !number || !message) {
       alert("All fields are required.");
       return;
     }
 
-    if (!validateEmail(email)) {
-      alert("Invalid email format.");
-      return;
-    }
-
-    if (message.length < 10) {
-      alert("Message must be at least 10 characters long.");
-      return;
-    }
+  
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        body: JSON.stringify({ name, email, message }), // Use JSON.stringify for better control
+        body: JSON.stringify({ name, number, message }), 
         headers: {
           "Content-Type": "application/json",
         },
       });
 
       if (!response.ok) {
-        console.log("Error: Could not send email.");
+        console.log("Error: Could not send message.");
         throw new Error(`Response status: ${response.status}`);
       }
 
@@ -51,12 +44,6 @@ export default function Contact() {
       console.error("Submission error:", err);
       alert("Error, please try resubmitting the form");
     }
-  }
-
-  function validateEmail(email) {
-    // Basic email validation regex
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
   }
 
   return (
@@ -76,19 +63,18 @@ export default function Contact() {
               type="text"
               required
             />
-
             <label htmlFor="form-name">Enter Your Name*</label>
           </div>
           <div className="inputgroup">
             <input
-              id="form-email"
-              autoComplete="email"
-              maxLength={80}
-              name="email"
-              type="email"
+              id="form-number"
+              autoComplete="tel"
+              maxLength={15} 
+              name="number"
+              type="tel"
               required
             />
-            <label htmlFor="form-email">Enter Your Email*</label>
+            <label htmlFor="form-number">Enter Your Number*</label>
           </div>
           <div className="inputgroup">
             <textarea
@@ -98,7 +84,7 @@ export default function Contact() {
               className="text-black p-2 border rounded"
               required
             />
-            <label htmlFor="form-message">Write Your Message*</label>
+            <label htmlFor="form-message">Write Your Message</label>
           </div>
           <button className="button" type="submit">
             Submit

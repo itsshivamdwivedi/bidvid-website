@@ -73,7 +73,9 @@
     height: auto;
 }
 
-@media (max-width: 768px) {
+
+
+@media (min-width: 300px) and (max-width:400px) {
     html, body {
         overflow-x: hidden;
         scroll-behavior: smooth;
@@ -96,7 +98,7 @@
         font-size: 2.4rem;
     }
     .hero-description {
-        font-size: 0.85rem;
+        font-size: 1rem;
         max-width: 90%;
     }
     .hero-button {
@@ -114,10 +116,60 @@
         align-items: center;
     }
     .hero-image {
-        width: 601px;
-        height: 330.63px;
+        width: 401px;
+        /*  */
         /* max-width: 100%; */
-        /* height: auto; */
+        height: auto;
+        margin-left: 40px;
+    
+    }
+}
+
+@media (min-width: 401px) and (max-width:800px) {
+    html, body {
+        overflow-x: hidden;
+        scroll-behavior: smooth;
+    }
+    .hero-container {
+        width: 100vw;
+    }
+    .hero-section {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        padding: 20px;
+        height: 890px;
+    }
+    .hero-content {
+        width: 100%;
+        /* margin-bottom: 20px; */
+    }
+    .hero-title, .hero-subtitle {
+        font-size: 2.4rem;
+    }
+    .hero-description {
+        font-size: 1.1rem;
+        max-width: 90%;
+    }
+    .hero-button {
+        padding: 10px;
+        width: 384px;
+        height: 44px;
+        font-size: 0.9rem;
+        border-radius: 12px;
+        margin-top: 10px;
+    }
+    .hero-image-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .hero-image {
+        width: 401px;
+        /*  */
+        /* max-width: 100%; */
+        height: auto;
         margin-left: 40px;
     
     }
