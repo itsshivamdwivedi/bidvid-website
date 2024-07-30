@@ -13,7 +13,6 @@ export default function Contact() {
     const number = formData.get("number").trim();
     const message = formData.get("message").trim();
 
-    // Validate fields
     if (!name || !number || !message) {
       alert("All fields are required.");
       return;
@@ -100,7 +99,7 @@ export default function Contact() {
           <span>
             <img src="/mail1.png" width="28px" alt="email" />
           </span>
-          <span className="email">support.sugarloger@gmail.com</span>
+          <span className="email">support.sugarlogger@gmail.com</span>
         </div>
       </div>
       <div className="image">

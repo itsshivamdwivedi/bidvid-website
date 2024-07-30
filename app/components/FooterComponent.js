@@ -17,7 +17,7 @@ const FooterComponent = () => {
                 <div className="flex space-x-4">
                     {/* Hide 'Contact Us' on mobile */}
                     <a href="#" className="hidden md:inline hover:underline">Contact Us</a>
-                    <a href="#" className="hover:underline">About Us</a>
+                    <a href="/about" className="hover:underline">About Us</a>
                 </div>
             </div>
             <div className="flex justify-center mt-2 md:mt-4">
