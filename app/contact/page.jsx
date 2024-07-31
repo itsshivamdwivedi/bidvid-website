@@ -91,13 +91,13 @@ export default function Contact() {
         </form>
         <div className="call">
           <span>
-            <ExportedImage src="/call1.png" width="28px" alt="call" />
+            <img src="/call1.png" width="28px" alt="call" />
           </span>
           <span className="number">9635462536</span>
         </div>
         <div className="gmail">
           <span>
-            <ExportedImage src="/mail1.png" width="28px" alt="email" />
+            <img src="/mail1.png" width="28px"  alt="email" />
           </span>
           <span className="email">support.sugarlogger@gmail.com</span>
         </div>
