@@ -31,7 +31,8 @@
     "react-hook-form": "^7.52.1",
     "resend": "^3.5.0",
     "sanitize-html": "^2.13.0",
-    "sharp": "^0.33.4"
+    "sharp": "^0.33.4",
+    "styled-components": "^6.1.12"
   },
   "devDependencies": {
     "@babel/core": "^7.24.9",

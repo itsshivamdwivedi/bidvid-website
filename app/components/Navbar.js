@@ -7,7 +7,7 @@ import "./Navbar.css"
 
 const Navbar = () => {
   return (
-    <nav className="bg-white p-4 shadow-md flex justify-between items-center nav-bar">
+    <nav className=" p-4 flex justify-between items-center nav-bar">
       <div className="flex items-center  "> 
         <ExportedImage src="/logo.png" alt="BidVid Logo" width={141} height={86} />
       </div>

@@ -93,13 +93,19 @@ export default function Contact() {
           <span>
             <img src="/call1.png" width="28px" alt="call" />
           </span>
-          <span className="number">9635462536</span>
+          <span className="number">
+            <a href="tel:9930451078">9930451078</a>
+          </span>
         </div>
         <div className="gmail">
           <span>
             <img src="/mail1.png" width="28px"  alt="email" />
           </span>
-          <span className="email">support.sugarlogger@gmail.com</span>
+          <span className="email">
+          <a href="mailto:support.sugarlogger@gmail.com" target="_blank">
+              support.sugarlogger@gmail.com
+            </a>
+          </span>
         </div>
       </div>
       <div className="image">
