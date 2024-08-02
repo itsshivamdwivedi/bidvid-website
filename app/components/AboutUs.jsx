@@ -10,7 +10,7 @@ const teamMembers = [
   { name: 'Amarnath', title: 'Head of Programmatic', image: '/amarnath.png' },
   { name: 'Alok Shenoy', title: 'Co-founder & CTO', image: '/alok.png' },
   { name: 'Shreya R', title: 'Manager Australia', image: '/shreya.png' },
-  { name: 'Bryan Edwin', title: 'Client Service', image: '/bryan.png' },
+  { name: 'Bryan Edwin', title: 'Client Services', image: '/bryan.png' },
   { name: 'Manish Parwal', title: 'Director', image: '/manish.png' },
   { name: 'Anujita Jain', title: 'Director', image: '/anujita.png' },
 ];
@@ -85,7 +85,7 @@ const AboutUs = () => {
       </div>
     
     
-      <div className="parent-team-container">
+      <div className="parent-team-container hidden md:block">
         <div className="team-container">
           <h2 className="team-header">Our Team</h2>
           <div className="team-members">
@@ -113,6 +113,48 @@ const AboutUs = () => {
           </div>
         </div>
       </div>
+      {/* Design for mobile  */}
+      <div className="team-container-mobile block md:hidden">
+        <h2 className="team-header-mobile text-white">Our Team</h2>
+      <div className="row-mobile">
+        {teamMembers.slice(0, 2).map((member, index) => (
+          <div className="team-member-mobile" key={index}>
+            <img src={member.image} alt={member.name} />
+            <h3>{member.name}</h3>
+            <p>{member.title}</p>
+          </div>
+        ))}
+      </div>
+      <div className="row-mobile">
+        {teamMembers.slice(2, 4).map((member, index) => (
+          <div className="team-member-mobile" key={index}>
+            <img src={member.image} alt={member.name} />
+            <h3>{member.name}</h3>
+            <p>{member.title}</p>
+          </div>
+        ))}
+      </div>
+      <div className="row-mobile">
+        {teamMembers.slice(4, 6).map((member, index) => (
+          <div className="team-member-mobile" key={index}>
+            <img src={member.image} alt={member.name} />
+            <h3>{member.name}</h3>
+            <p>{member.title}</p>
+          </div>
+        ))}
+      </div>
+      <div className="row-mobile">
+        {teamMembers.slice(6).map((member, index) => (
+          <div className="team-member-mobile" key={index}>
+            <img src={member.image} alt={member.name} />
+            <h3>{member.name}</h3>
+            <p>{member.title}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+
+      
     </>
   );
 };

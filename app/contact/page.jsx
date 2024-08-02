@@ -1,29 +1,63 @@
 "use client";
 
-import React from "react";
-import Link from "next/link";
+import React, { useState, useEffect } from "react";
 import "../components/ContactForm.css";
 import ExportedImage from "next-image-export-optimizer";
 
 export default function Contact() {
+  const [formState, setFormState] = useState({
+    name: "",
+    number: "",
+    message: "",
+  });
+
+  const [isButtonActive, setIsButtonActive] = useState(false);
+
+  useEffect(() => {
+    const { name, number, message } = formState;
+    if (name.trim() && number.trim() && message.trim()) {
+      setIsButtonActive(true);
+    } else {
+      setIsButtonActive(false);
+    }
+  }, [formState]);
+
+  const handleInputChange = (event) => {
+    const { name, value } = event.target;
+    setFormState({ ...formState, [name]: value });
+  };
+
+  const validateName = (event) => {
+    const { value } = event.target;
+    const regex = /^[a-zA-Z\s]*$/;
+    if (!regex.test(value)) {
+      alert("Name should contain only alphabets");
+      setFormState({ ...formState, name: "" });
+    }
+  };
+
+  const validateNumber = (event) => {
+    const { value } = event.target;
+    const regex = /^[0-9]*$/;
+    if (!regex.test(value)) {
+      alert("Please enter numbers only");
+      setFormState({ ...formState, number: "" });
+    }
+  };
+
   async function handleSubmit(event) {
     event.preventDefault();
-    const formData = new FormData(event.target);
-    const name = formData.get("name").trim();
-    const number = formData.get("number").trim();
-    const message = formData.get("message").trim();
+    const { name, number, message } = formState;
 
-    if (!name || !number || !message) {
+    if (!name.trim() || !number.trim() || !message.trim()) {
       alert("All fields are required.");
       return;
     }
 
-  
-
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
-        body: JSON.stringify({ name, number, message }), 
+        body: JSON.stringify({ name, number, message }),
         headers: {
           "Content-Type": "application/json",
         },
@@ -35,10 +69,10 @@ export default function Contact() {
       }
 
       const responseData = await response.json();
-      console.log(responseData["message"]);
+      console.log(responseData.message);
 
       alert("Message successfully sent");
-      event.target.reset();
+      setFormState({ name: "", number: "", message: "" });
     } catch (err) {
       console.error("Submission error:", err);
       alert("Error, please try resubmitting the form");
@@ -60,6 +94,9 @@ export default function Contact() {
               maxLength={50}
               name="name"
               type="text"
+              value={formState.name}
+              onChange={handleInputChange}
+              onBlur={validateName}
               required
             />
             <label htmlFor="form-name">Enter Your Name*</label>
@@ -68,9 +105,12 @@ export default function Contact() {
             <input
               id="form-number"
               autoComplete="tel"
-              maxLength={15} 
+              maxLength={15}
               name="number"
               type="tel"
+              value={formState.number}
+              onChange={handleInputChange}
+              onBlur={validateNumber}
               required
             />
             <label htmlFor="form-number">Enter Your Number*</label>
@@ -80,12 +120,20 @@ export default function Contact() {
               id="form-message"
               name="message"
               rows={5}
-              className="text-black p-2 border rounded"
+              value={formState.message}
+              onChange={handleInputChange}
               required
             />
             <label htmlFor="form-message">Write Your Message</label>
           </div>
-          <button className="button" type="submit">
+          <button
+            className="button"
+            type="submit"
+            disabled={!isButtonActive}
+            style={{
+              backgroundColor: isButtonActive ? "darkblue" : "grey",
+            }}
+          >
             Submit
           </button>
         </form>
@@ -99,10 +147,10 @@ export default function Contact() {
         </div>
         <div className="gmail">
           <span>
-            <img src="/mail1.png" width="28px"  alt="email" />
+            <img src="/mail1.png" width="28px" alt="email" />
           </span>
           <span className="email">
-          <a href="mailto:support.sugarlogger@gmail.com" target="_blank">
+            <a href="mailto:support.sugarlogger@gmail.com" target="_blank">
               support.sugarlogger@gmail.com
             </a>
           </span>

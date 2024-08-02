@@ -90,7 +90,7 @@
     margin-bottom: 20px;
 }
 .m_p{
-    font-size: 1.22rem;
+    font-size: 1.2rem;
 }
 @media (max-width: 767px) {
     .mobile-content-container {
@@ -210,95 +210,117 @@
     font-size: 14px;
     font-weight: 400;
 }
-@media (max-width: 768px) {
-    .parent-team-container {
-        width: 100%;
-        height: 965px; /* Height as specified for mobile */
+.team-container-mobile{
+    display: none;
+}
+
+@media (min-width:300px) and (max-width:400px) {
+    .team-container-mobile {
+       
+        background-color: #001f3f;
+        height: 965px;
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Center content vertically */
-        align-items: center;
-        font-family: 'Poppins', sans-serif;
-        background-color: rgba(6, 20, 51, 1); /* Adjust as needed for your design */
-        color: white;
-        padding: 20px; /* Add padding for mobile */
-        box-sizing: border-box;
-    }
-
-    .team-container {
-        width: 100%;
-        height: auto;
-        margin: 0; /* Remove margins for mobile */
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .team-header {
-        font-size: 24px; /* Adjust font size for mobile */
-        font-weight: 700;
-        margin-bottom: 20px; /* Reduce margin for mobile */
-    }
-
-    .team-members {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        height: auto;
-        flex-wrap: nowrap;
         justify-content: flex-start;
-        gap: 20px;
+        align-items: center;
+        padding-top: 20px;
     }
-
-    .member-row {
+    .parent-team-container {
+        display: none;
+      }
+      
+      .team-container-mobile {
+        display: flex;
+      }
+    
+    .team-header-mobile{
+        font-size: 25px;
+        line-height: 34.8px;
+        font-weight: 700;
+        /* text-align: left; */
+        text-indent: -170px;
+         margin: 20px 20px;
+    }
+    .row-mobile {
+        
+        gap: 54px;
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        width: 322px; /* 153px + 153px + 8px gap */
+        margin-bottom: 42px
+    }
+}
+@media (min-width:400px) and (max-width: 768px) {
+    .parent-team-container {
+        display: none;
+      }
+      
+      .team-container-mobile {
+        display: flex;
+      }
     }
 
-    .member-box {
-        width: calc(50% - 10px); /* Two columns */
+    .team-header-mobile{
+        
+        font-size: 25px;
+        line-height: 34.8px;
+        font-weight: 700;
+        /* text-align: left; */
+        text-indent: -170px;
+         margin: 20px 20px;
+    }
+    
+    .team-container-mobile {
+        /* width: 360px; */
+        background-color: #001f3f;
+        height: 965px;
         display: flex;
         flex-direction: column;
+        justify-content: flex-start;
         align-items: center;
-        gap: 8px;
-        text-align: center;
-        margin-bottom: 20px; /* Add spacing between members */
+        padding-top: 20px;
     }
 
-    .member-image {
+    .row-mobile {
+        margin-right: 15px;
+        gap: 54px;
+        display: flex;
+        justify-content: space-between;
+        width: 322px; /* 153px + 153px + 8px gap */
+        margin-bottom: 42px
+    }
+
+    .team-member-mobile {
+        width: 153px;
+        height: 170px;
+        /* text-align: center; */
+        color: white;
+    }
+
+    .team-member-mobile img {
         width: 113px;
         height: 113px;
         border-radius: 50%;
+        margin-bottom: 10px;
     }
 
-    .member-name {
+    .team-member-mobile h3 {
         font-size: 16px;
+        margin: 5px 0; 
         font-weight: 600;
     }
 
-    .member-title {
-        font-size: 14px;
-        font-weight: 400;
+    .team-member-mobile p {
+        font-size: 12px;
+        margin:0;
+}
+@media (min-width: 769px) {
+    .team-container-mobile {
+      display: none;
     }
 }
-/* 
-@media (max-width: 768px) {
-    .team-container {
-        width: 90%;
-        margin: 0;
-        padding: 0;
-    }
 
-    .team-members {
-        gap: 20px;
-    }
 
-    .member-box {
-        width: 100%;
-        height: auto;
-    }
-} */
 @media (max-width: 768px) {
     .custom-flex-container {
         flex-direction: column;

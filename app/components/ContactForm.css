@@ -2,7 +2,6 @@
 
 h1 {
     font-size: 40px;
-    
 }
 
 .inputgroup {
@@ -30,8 +29,7 @@ h1 {
     font-size: 16px;
     color: rgb(10, 10, 45);
     padding: 16px;
-    
-    border: 1px solid rgb(10, 10, 45);
+    border: 0.6px solid rgb(10, 10, 45);
     border-radius: 10px;
     box-sizing: border-box;
     position: relative;
@@ -54,7 +52,6 @@ h1 {
     top: -3px;
     font-size: 12px;
     color: black;
-   
     padding: 0 5px; 
 }
 
@@ -72,28 +69,30 @@ h1 {
     background-color: blue;
     transition: 0.75s;
 }
-.call{
+
+.call {
     padding-top: 20px;
     gap: 8px;
-    margin-bottom: 8px
+    margin-bottom: 8px;
 }
+
 .call img {
     padding-top: 5px;
-    
 }
+
 .gmail {
     gap: 8px;
     padding-bottom: 0px;
     display: flex;
 }
-.gmail img{
 
-
+.gmail img {
 }
+
 .email {
-    /* padding-top: 3px; */
     font-size: 20px;
 }
+
 .call, .email {
     display: flex;
 }
@@ -103,18 +102,14 @@ h1 {
     font-size: 20px;
 }
 
-
-
 .container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: auto;
-    /* width: 100%; */
     margin: 0px auto 0px;
     max-width: 1440px;
     padding-left: 208px;
-    
 }
 
 .image {
@@ -123,7 +118,7 @@ h1 {
 }
 
 .image img {
-   max-width: 477px;
+    max-width: 477px;
     height: auto; 
     overflow: hidden;
 }
@@ -136,31 +131,29 @@ h1 {
     margin-bottom: 80px;
 }
 
-
 @media (min-width: 1200px) and (max-width: 1500px) {
     .image {
         width: 100%; 
         max-width: 700px; 
         height: auto; 
     }
-    .container{
+    .container {
         padding-left: 100px;
-        
     }
 }
+
 @media (min-width: 1501px) and (max-width: 2000px) {
     .image {
         width: 100%; 
         max-width: 700px; 
         height: auto; 
     }
-    .container{
+    .container {
         padding-left: 100px;
-        
     }
 }
 
-@media (min-width:400px) and (max-width:800px) {
+@media (min-width: 400px) and (max-width: 800px) {
     h1 {
         text-align: left; 
         padding-left: 5px; 
@@ -169,8 +162,6 @@ h1 {
     .inputgroup {
         margin: 15px 0;
     }
-
-    
 
     .container {
         padding-left: 15px; 
@@ -184,14 +175,13 @@ h1 {
 
     .form {
         margin-right: 0;
-        /* margin-top: 20px;  */
         align-self: flex-start; 
         padding-left: 10px;
         margin-bottom: 40px;
     }
 }
 
-@media (min-width:300px) and (max-width: 400px) {
+@media (min-width: 300px) and (max-width: 400px) {
     h1 {
         text-align: left; 
         padding-left: 5px; 
@@ -202,11 +192,10 @@ h1 {
     }
     .inputgroup input,
     .inputgroup textarea,
-    .button{
+    .button {
         width: 300px;
+        border: 0.6px solid rgb(10, 10, 45);
     }
-
-    
 
     .container {
         padding-left: 15px; 
@@ -220,7 +209,6 @@ h1 {
 
     .form {
         margin-right: 0;
-        /* margin-top: 20px;  */
         align-self: flex-start; 
         padding-left: 10px;
         margin-bottom: 40px;
