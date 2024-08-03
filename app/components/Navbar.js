@@ -8,8 +8,8 @@ import "./Navbar.css"
 const Navbar = () => {
   return (
     <nav className=" p-4 flex justify-between items-center nav-bar">
-      <div className="flex items-center  "> 
-        <ExportedImage src="/bidvid_logo.svg" alt="BidVid Logo" width={141} height={86} />
+      <div className="flex items-center navbar-mob-image "> 
+        <ExportedImage src="/bidvid_logo.svg" alt="BidVid Logo" width={126} height={52} />
       </div>
       <div className="space-x-4 lg:pr-6"> 
         <Link href="/about" legacyBehavior>

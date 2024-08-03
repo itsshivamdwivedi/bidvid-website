@@ -1,9 +1,14 @@
 .nav-bar{
     max-width: 1440px;
     margin:0 auto;
-    padding-left: 4.4rem;
+    padding-left: 6rem;
 }
 @media (max-width:768px){
+    .navbar-mob-image{
+        margin-left: 26px;
+        width: 98px;
+        height: 49px;
+    }
     .nav-bar{
         padding-left: 0.1rem;
     }
