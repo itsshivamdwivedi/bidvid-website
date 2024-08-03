@@ -9,7 +9,7 @@ const Navbar = () => {
   return (
     <nav className=" p-4 flex justify-between items-center nav-bar">
       <div className="flex items-center  "> 
-        <ExportedImage src="/logo.png" alt="BidVid Logo" width={141} height={86} />
+        <ExportedImage src="/bidvid_logo.svg" alt="BidVid Logo" width={141} height={86} />
       </div>
       <div className="space-x-4 lg:pr-6"> 
         <Link href="/about" legacyBehavior>

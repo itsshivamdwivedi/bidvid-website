@@ -51,7 +51,7 @@ export async function POST(request) {
         ciphers: "SSLv3",
     },
     port: 587,
-    secure: false,
+    secure: true,
       auth: {
         user: username,
         pass: password,
@@ -87,6 +87,7 @@ export async function POST(request) {
     return setCORSHeaders(response);
 
   } catch (error) {
+    console.log(error)
     const response = NextResponse.json(
       { message: 'Could not send message', error: error.message },
       { status: 500 }
