@@ -87,7 +87,8 @@ export async function POST(request) {
     return setCORSHeaders(response);
 
   } catch (error) {
-    console.log(error)
+    const errorMessage = `Error: ${error.message}`;
+    console.log(errorMessage);
     const response = NextResponse.json(
       { message: 'Could not send message', error: error.message },
       { status: 500 }
