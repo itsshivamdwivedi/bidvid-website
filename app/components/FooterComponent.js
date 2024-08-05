@@ -14,7 +14,7 @@ const FooterComponent = () => {
                     src="/bidvid_logo.svg" 
                     alt="BidVid logo" 
                    
-                    // className="w-20 h-auto md:w-28 md:ml-4 lg:w-40  " 
+                    // className="w-32 h-auto md:w-28 md:ml-4 lg:w-40  " 
                     width={126} height={52} 
                 />
                 <div className="flex space-x-4">

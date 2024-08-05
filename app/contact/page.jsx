@@ -3,11 +3,12 @@
 import React, { useState, useEffect } from "react";
 import "../components/ContactForm.css";
 import ExportedImage from "next-image-export-optimizer";
+import Link from "next/link";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
     name: "",
-    number: "",
+    number: "", 
     message: "",
   });
 
@@ -80,7 +81,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="container">
+    <div className="container" id="contact-us">
       <div className="form">
         <h1>
           <b>Contact Us</b>

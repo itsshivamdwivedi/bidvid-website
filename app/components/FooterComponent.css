@@ -17,6 +17,10 @@
         /* justify-content: space-between;
         align-items: center; */
     }
+    .footer-container img {
+        width: 98px;
+        height: auto;
+    }
     .footer-mob-img{
         
         width: 98px;

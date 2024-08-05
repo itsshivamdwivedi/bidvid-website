@@ -9,14 +9,17 @@ const Navbar = () => {
   return (
     <nav className=" p-4 flex justify-between items-center nav-bar">
       <div className="flex items-center navbar-mob-image "> 
+        <a href='/'>
         <ExportedImage src="/bidvid_logo.svg" alt="BidVid Logo" width={126} height={52} />
+        </a>
       </div>
       <div className="space-x-4 lg:pr-6"> 
-        <Link href="/about" legacyBehavior>
-          <a className="text-gray-800 hover:text-blue-600">About Us</a>
-        </Link>
+        
         <Link href="#contact-us" legacyBehavior>
           <a className="hidden md:inline text-gray-800 hover:text-blue-600">Contact Us</a>
+        </Link>
+        <Link href="/about" legacyBehavior>
+          <a className="text-gray-800 hover:text-blue-600">About Us</a>
         </Link>
       </div>
     </nav>
