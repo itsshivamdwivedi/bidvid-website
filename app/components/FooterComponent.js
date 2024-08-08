@@ -11,7 +11,7 @@ const FooterComponent = () => {
             {/* Aligning content for mobile and larger screens */}
             <div className="flex flex-row justify-between items-center md:flex-row md:justify-between ">
                 <ExportedImage
-                    src="/bidvid_logo.svg" 
+                    src="/newbidvid.png" 
                     alt="BidVid logo" 
                    
                     // className="w-32 h-auto md:w-28 md:ml-4 lg:w-40  " 

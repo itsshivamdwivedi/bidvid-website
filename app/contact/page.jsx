@@ -2,17 +2,19 @@
 
 import React, { useState, useEffect } from "react";
 import "../components/ContactForm.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import ExportedImage from "next-image-export-optimizer";
-import Link from "next/link";
 
 export default function Contact() {
   const [formState, setFormState] = useState({
     name: "",
-    number: "", 
+    number: "",
     message: "",
   });
 
   const [isButtonActive, setIsButtonActive] = useState(false);
+  const [isToastVisible, setIsToastVisible] = useState(false);
 
   useEffect(() => {
     const { name, number, message } = formState;
@@ -23,6 +25,28 @@ export default function Contact() {
     }
   }, [formState]);
 
+  useEffect(() => {
+    const body = document.querySelector('body');
+    const darkenedOverlay = document.createElement('div');
+
+    if (isToastVisible) {
+      darkenedOverlay.className = 'darkened-overlay';
+      body.appendChild(darkenedOverlay);
+      document.body.style.overflow = "hidden";
+    } else {
+      const existingOverlay = document.querySelector('.darkened-overlay');
+      if (existingOverlay) {
+        body.removeChild(existingOverlay);
+      }
+      document.body.style.overflow = "auto";
+    }
+    return () => {
+      const existingOverlay = document.querySelector('.darkened-overlay');
+      if (existingOverlay) {
+        body.removeChild(existingOverlay);
+      }
+    };
+  }, [isToastVisible]);
   const handleInputChange = (event) => {
     const { name, value } = event.target;
     setFormState({ ...formState, [name]: value });
@@ -72,7 +96,52 @@ export default function Contact() {
       const responseData = await response.json();
       console.log(responseData.message);
 
-      alert("Message successfully sent");
+      setIsToastVisible(true);
+
+      toast(
+        <div style={{ textAlign: "center", display: "flex", flexDirection: "column", alignItems: "center" }}>
+          <ExportedImage
+            src="/successImage.svg"
+            alt="Success"
+            width={45}
+            height={45}
+            style={{ marginBottom: "16px" }}
+          />
+          <div>
+            <p
+              style={{
+                fontFamily: "Poppins",
+                fontWeight: 600,
+                fontSize: "20px",
+                lineHeight: "29px",
+                color: "rgba(10, 10, 10, 1)",
+                margin: 0,
+              }}
+            >
+              Thank you for filling the form
+            </p>
+            <p
+              style={{
+                fontFamily: "Poppins",
+                fontWeight: 400,
+                fontSize: "16px",
+                lineHeight: "23.2px",
+                color: "rgba(0, 0, 0, 0.8)",
+                margin: 0,
+              }}
+            >
+              Our team will connect with you shortly.
+            </p>
+          </div>
+        </div>,
+        {
+          closeButton: true,
+          autoClose: false,
+          position: "top-center",
+          onClose: () => setIsToastVisible(false),
+        }
+      );
+
       setFormState({ name: "", number: "", message: "" });
     } catch (err) {
       console.error("Submission error:", err);
@@ -80,8 +149,16 @@ export default function Contact() {
     }
   }
 
+  useEffect(() => {
+    if (isToastVisible) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isToastVisible]);
+
   return (
-    <div className="container" id="contact-us">
+    <div className={`container ${isToastVisible ? "darkened" : ""}`} id="contact-us">
       <div className="form">
         <h1>
           <b>Contact Us</b>
@@ -166,6 +243,7 @@ export default function Contact() {
           alt="robot"
         />
       </div>
+      <ToastContainer />
     </div>
   );
 }

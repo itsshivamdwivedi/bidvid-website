@@ -215,3 +215,47 @@ h1 {
         margin-bottom: 40px;
     }
 }
+.darkened-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999; /* Ensure it's above all content but below the toast */
+  }
+.Toastify__toast-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    text-align: center;
+    width: 100%; /* Full width to ensure centering */
+    height: 60%; /* Full height to ensure centering */
+  }
+  
+  .Toastify__toast {
+    border-radius: 8px;
+    padding: 16px;
+    background-color: #fff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:356px;
+    height:165px;
+  }
+  
+  .Toastify__toast--success {
+    border-left: 5px solid #4caf50;
+  }
+  
+  .Toastify__close-button {
+    color: rgba(0, 0, 0, 0.5);
+  }
