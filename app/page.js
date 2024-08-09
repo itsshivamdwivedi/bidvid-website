@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 
-import { Input, Textarea, Button } from '@chakra-ui/react';
 import HeroSection from './components/HeroSection';
 import Services from './components/Services';
 import Benefits from './components/Benefits';
@@ -11,15 +10,21 @@ import './components/ContactForm.css';
 import Contact from "./contact/page";
 import Head from 'next/head';
 
-export default function Page(){
+export default function Page() {
+  const seoData = {
+    title: 'BidVids: Revolutionising Bidding with AI-Powered Optimisation',
+    description: 'BidVids is a cutting-edge ad technology platform that uses advanced AI algorithms to optimise advertising yield for digital media buyers. Boost revenue and enhance user experience seamlessly.',
+    ogTitle: 'BidVids: Revolutionising Bidding with AI-Powered Optimisation',
+    ogDescription: 'BidVids is a cutting-edge ad technology platform that uses advanced AI algorithms to optimise advertising yield for digital media buyers. Boost revenue and enhance user experience seamlessly.',
+  };
+
   return (
     <>
-     <Head>
-        <title>BidVids: Revolutionising Bidding with AI-Powered Optimisation</title>
-        <meta name="description" content="BidVids is a cutting-edge ad technology platform that uses advanced AI algorithms to optimise advertising yield for digital media buyers. Boost revenue and enhance user experience seamlessly." />
-        <meta property="og:title" content="BidVids: Revolutionising Bidding with AI-Powered Optimisation" />
-        <meta property="og:description" content="BidVids is a cutting-edge ad technology platform that uses advanced AI algorithms to optimise advertising yield for digital media buyers. Boost revenue and enhance user experience seamlessly." />
-      
+      <Head>
+        <title>{seoData.title}</title>
+        <meta name="description" content={seoData.description} />
+        <meta property="og:title" content={seoData.ogTitle} />
+        <meta property="og:description" content={seoData.ogDescription} />
       </Head>
       <HeroSection />
       <Services />
@@ -28,6 +33,4 @@ export default function Page(){
       <FooterComponent />
     </>
   );
-
 }
-
