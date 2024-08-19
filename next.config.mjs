@@ -1,7 +1,7 @@
 // next.config.mjs
 export default {
     
-    distDir: 'dist',
+    // distDir: 'dist',
     
     
     images: {
